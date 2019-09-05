@@ -26,6 +26,10 @@ $(document).ready(function()
 
   });
 
+  // magnific test
+
+  $('#portfolio img').magnificPopup({type:'image'});
+
 });
 
 // end jQuery
