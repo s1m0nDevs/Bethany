@@ -1,53 +1,52 @@
 let scrollHeader = ()=>{
-  if (window.pageYOffset > 50) 
+  if (window.pageYOffset > 50)
     document.querySelector('.navbar-fixed-top').classList.add('top-nav-collapse')
   else
     document.querySelector('.navbar-fixed-top').classList.remove('top-nav-collapse')
 }
 
 // start jQuery
-// $(document).ready(function()
-// {
+$(document).ready(function()
+{
 
-//   scrollHeader()
+  scrollHeader()
 
-//   // Navigation scrolls
-//   $('.navbar-nav li').on('click', function() {
-//     let anchor = $(this).data('value'),
-//        anchorOffset = $("nav").height()-5;
+  $('.navbar-nav li').on('click', function() {
+    let anchor = $(this).data('value'),
+       anchorOffset = $("nav").height()-5;
 
-//     if (!anchorOffset)
-//     {
-//        anchorOffset = 0; 
-//     }
+    if (!anchorOffset)
+    {
+       anchorOffset = 0;
+    }
 
-//     $('html,body').animate({ 
-//        scrollTop: $(`section[data-value='${anchor}']`).offset().top - anchorOffset
-//     }, 500, 'easeInOutExpo');
+    $('html,body').animate({
+       scrollTop: $(`section[data-value='${anchor}']`).offset().top - anchorOffset
+    }, 500, 'easeInOutExpo');
 
-//   });
+  });
 
-// });
+});
 
 // end jQuery
 
-
-document.querySelector('.navbar-nav li').addEventListener('click',(e)=>{
-    let anchor = e.target.dataset.value,
-       anchorOffset = document.querySelector('nav').height()-5;
-
-    if (!anchorOffset || anchorOffset < 0)
-    {
-       anchorOffset = 0; 
-    }
-
-    let offSetTOp = document.querySelector(`section[data-value='${anchor}']`).offset().top - anchorOffset
-
-    // document.querySelector('body').animate({ 
-    window.scrollTo(0, offSetTOp)
-    // });
-
-});
+// try to do scrollTop without jQuery
+// document.querySelector('.navbar-nav li').addEventListener('click',(e)=>{
+//     let anchor = e.target.dataset.value,
+//        anchorOffset = document.querySelector('nav').height()-5;
+//
+//     if (!anchorOffset || anchorOffset < 0)
+//     {
+//        anchorOffset = 0;
+//     }
+//
+//     let offSetTOp = document.querySelector(`section[data-value='${anchor}']`).offset().top - anchorOffset
+//
+//     // document.querySelector('body').animate({
+//     window.scrollTo(0, offSetTOp)
+//     // });
+//
+// });
 
 wow = new WOW({
   animateClass: 'animated',
@@ -67,9 +66,9 @@ var bodyRect = document.body.getBoundingClientRect(),
   navLis = document.querySelectorAll('nav .nav li'),
   outPutValue = [],
   heightSections = [],
-  numSec = 0; 
+  numSec = 0;
 
-for (var i = 0; i < navLis.length; i++) 
+for (var i = 0; i < navLis.length; i++)
 {
   outPutValue[i] = navLis[i].dataset.value;
   heightSections[i] = document.querySelector(`section[data-value='${outPutValue[i]}']`).getBoundingClientRect().top - bodyRect.top - 40;
@@ -82,7 +81,7 @@ document.addEventListener('scroll',(e)=>{
 
   scrollHeader()
 
-  while (numSec < Object.keys(heightSections).length) 
+  while (numSec < Object.keys(heightSections).length)
   {
     if (pageYOffset < heightSections[numSec+1])
     {
