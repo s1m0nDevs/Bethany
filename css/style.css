@@ -77,14 +77,14 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: transparent;
 }
 
-.navbar-default .navbar-nav>li>a {
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:focus {
   color: #fff;
   padding: 10px 20px;
   text-transform: uppercase;
 	background-color: transparent;
 }
 
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+.navbar-default .navbar-nav>li>a:hover {
   color: #FFD34E;
 }
 
@@ -287,6 +287,19 @@ h3.txt-tl {
 
 .portfolio-box {
   margin-bottom: 15px;
+  filter: grayscale(50%);
+}
+
+.portfolio-box:hover {
+  border-radius: 5px;
+  transition: .4s;
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+.portfolio-box img:hover
+{
+  border-radius: 3px;
 }
 
 .padding-right-zero {
@@ -295,7 +308,7 @@ h3.txt-tl {
 
 #contact {
   background-color: #f8f8f8;
-  padding: 105px 0 115px 0;
+  padding: 95px 0 80px 0;
 }
 
 nav .nav-between{

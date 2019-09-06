@@ -5,48 +5,52 @@ let scrollHeader = ()=>{
     document.querySelector('.navbar-fixed-top').classList.remove('top-nav-collapse')
 }
 
-// start jQuery
-$(document).ready(function()
-{
-
-  scrollHeader()
-
-  $('.navbar-nav li').on('click', function() {
-    let anchor = $(this).data('value'),
-       anchorOffset = $("nav").height()-5;
-
-    if (!anchorOffset)
-    {
-       anchorOffset = 0;
-    }
-
-    $('html,body').animate({
-       scrollTop: $(`section[data-value='${anchor}']`).offset().top - anchorOffset
-    }, 500, 'easeInOutExpo');
-
-  });
-
+document.addEventListener("DOMContentLoaded", () => {
+    scrollHeader()
 });
 
-// end jQuery
+document.querySelectorAll('.navbar-nav li').forEach(s=>{
+  s.addEventListener('click', event => {
+    event.preventDefault();
+  	let target = event.target.parentElement.dataset.value;
 
-// try to do scrollTop without jQuery
-// document.querySelector('.navbar-nav li').addEventListener('click',(e)=>{
-//     let anchor = e.target.dataset.value,
-//        anchorOffset = document.querySelector('nav').height()-5;
+    document.querySelector(`section[data-value='${target}']`).scrollIntoView({
+       block: "start",
+       behavior: "smooth"
+     })
+  })
+})
+
+document.querySelectorAll('#portfolio img').forEach(photo=>{
+  photo.addEventListener("click", () => {
+    
+  })
+});
+
+// // start jQuery
+// $(document).ready(function()
+// {
 //
-//     if (!anchorOffset || anchorOffset < 0)
+//   scrollHeader()
+//
+//   $('.navbar-nav li').on('click', function() {
+//     let anchor = $(this).data('value'),
+//        anchorOffset = $("nav").height()-5;
+//
+//     if (!anchorOffset)
 //     {
 //        anchorOffset = 0;
 //     }
 //
-//     let offSetTOp = document.querySelector(`section[data-value='${anchor}']`).offset().top - anchorOffset
+//     $('html,body').animate({
+//        scrollTop: $(`section[data-value='${anchor}']`).offset().top - anchorOffset
+//     }, 500, 'easeInOutExpo');
 //
-//     // document.querySelector('body').animate({
-//     window.scrollTo(0, offSetTOp)
-//     // });
+//   });
 //
 // });
+//
+// // end jQuery
 
 wow = new WOW({
   animateClass: 'animated',
