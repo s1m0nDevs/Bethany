@@ -287,6 +287,19 @@ h3.txt-tl {
 
 .portfolio-box {
   margin-bottom: 15px;
+  filter: grayscale(50%);
+}
+
+.portfolio-box:hover {
+  border-radius: 5px;
+  transition: .4s;
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+.portfolio-box img:hover
+{
+  border-radius: 3px;
 }
 
 .padding-right-zero {
