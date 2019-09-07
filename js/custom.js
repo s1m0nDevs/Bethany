@@ -21,12 +21,6 @@ document.querySelectorAll('.navbar-nav li').forEach(s=>{
   })
 })
 
-document.querySelectorAll('#portfolio img').forEach(photo=>{
-  photo.addEventListener("click", () => {
-    
-  })
-});
-
 // // start jQuery
 // $(document).ready(function()
 // {
