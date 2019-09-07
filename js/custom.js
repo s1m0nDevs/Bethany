@@ -9,6 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollHeader()
 });
 
+
+
+document.querySelector("button[data-target='#mynavbar']").addEventListener("click", () => {
+  navbarToggler.classList.toggle("open-navbar-toggler");
+  navbarMenu.classList.toggle("open");
+});
+
 document.querySelectorAll('.navbar-nav li').forEach(s=>{
   s.addEventListener('click', event => {
     event.preventDefault();
@@ -48,7 +55,8 @@ document.querySelectorAll('.navbar-nav li').forEach(s=>{
 
 wow = new WOW({
   animateClass: 'animated',
-  offset: 100
+  offset: 100,
+  mobile: false,
 });
 wow.init();
 
@@ -57,6 +65,31 @@ let removeClassAttr = (el)=>{
   if(classAv == null || classAv == '')
     el.removeAttribute('class');
 }
+
+
+// Nav responsive start
+// let menuRight = document.querySelector('.top_header .top_menu_right')
+
+// document.querySelector('.top_header img.navbar').addEventListener('click',(e)=>{
+//   if (menuRight.className.indexOf('opened') != -1)
+//   {
+//     menuRight.classList.remove('opened');
+//     menuRight.classList.add('dnone');
+//   }
+//   else
+//   {
+//     menuRight.classList.add('opened');
+//     menuRight.classList.remove('dnone');
+//   }
+// });
+
+// document.querySelectorAll('.top_header .top_menu_right li').forEach(s=>{
+//   s.addEventListener('click', event => {
+//      menuRight.classList.remove('opened');
+//      menuRight.classList.add('dnone');
+//   })
+// });
+// Nav responsive end
 
 
 // Nav header get info start
