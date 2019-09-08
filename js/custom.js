@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollHeader()
 });
 
+window.addEventListener('beforeunload', (e)=>{window.scroll(0,0);})
+
 
 // Nav responsive start
 let menuRight = document.querySelector('.main-header .top_menu_right')
