@@ -34,12 +34,6 @@ document.querySelectorAll('.main-header .top_menu_right li').forEach(s=>{
 });
 // Nav responsive end
 
-
-// document.querySelector("button[data-target='#mynavbar']").addEventListener("click", () => {
-//   navbarToggler.classList.toggle("open-navbar-toggler");
-//   navbarMenu.classList.toggle("open");
-// });
-
 document.querySelectorAll('nav li').forEach(s=>{
   s.addEventListener('click', event => {
     event.preventDefault();
