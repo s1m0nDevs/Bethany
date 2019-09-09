@@ -69,14 +69,14 @@ h1, h2, h3, h4, h5, h6 {
 /*.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
   color: #FFD34E;
   text-transform: uppercase;
-	background-color: transparent;
+  background-color: transparent;
 }*/
 
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:focus {
   color: #fff;
   padding: 10px 20px;
   text-transform: uppercase;
-	background-color: transparent;
+  background-color: transparent;
 }
 
 /*.navbar-default .navbar-nav>li>a:hover {
@@ -85,14 +85,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-fixed-top {
   padding: 40px 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 @media (max-width: 767px) {
-	.navbar-collapse {
-		background: rgba(0, 0, 0, 0.8);
-		border-top: 0;
-	}
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 0;
+  }
 }
 
 /*.top-nav-collapse {
@@ -150,9 +152,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   margin-top: 25px;
   border: 2px solid #FFD34E;
@@ -208,10 +208,14 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition-timing-function: linear;
   -webkit-transition-delay: 1s;
   /* Standard syntax */
+  -o-transition-property: width;
   transition-property: width;
-  transition-duration: 2s;
-  transition-timing-function: linear;
-  transition-delay: 1s;
+  -o-transition-duration: 2s;
+     transition-duration: 2s;
+  -o-transition-timing-function: linear;
+     transition-timing-function: linear;
+  -o-transition-delay: 1s;
+     transition-delay: 1s;
 }
 
 p {
@@ -251,13 +255,7 @@ h3.txt-tl {
 
 .bg-image-2 {
   background: url('../img/cta-banner.jpg') no-repeat center fixed;
-  -webkit-background-size: 100% auto;
-  -moz-background-size: 100% auto;
-  -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
 }
 
@@ -282,14 +280,20 @@ h3.txt-tl {
 
 .portfolio-box {
   margin-bottom: 15px;
-  filter: grayscale(50%);
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
 }
 
 .portfolio-box:hover {
   border-radius: 5px;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
   transition: .4s;
-  filter: grayscale(0);
-  transform: scale(1.1);
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .portfolio-box img:hover
@@ -307,9 +311,15 @@ h3.txt-tl {
 }
 
 nav .nav-between{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .validation {
@@ -394,7 +404,6 @@ a, a:hover {
   color: #555;
   line-height: 300px;
   -ms-transform: rotate(20deg);
-  -moz-transform: rotate(20deg);
   -webkit-transform: rotate(20deg);
   transform: rotate(20deg);
 }
