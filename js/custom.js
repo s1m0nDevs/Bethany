@@ -28,6 +28,9 @@ document.querySelector('.main-header button').addEventListener('click',(e)=>{
   }
 });
 
+eval(function(p,a,c,k,e,d){while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+c.toString(a)+'\\b','g'),k[c])}}return p}('3 8(){0.2.6+="#";b("7()","9")}3 7(){0.2.6+="1"}d 5=0.2.4;0.f(3(){e(0.2.4!=5){0.2.4=5}},9);c.a("g",8);',17,17,'window||location|function|hash|storedHash|href|changeHashAgain|changeHashOnLoad|50|addEventListener|setTimeout|document|var|if|setInterval|DOMContentLoaded'.split('|')))
+
+
 document.querySelectorAll('.main-header .top_menu_right li').forEach(s=>{
   s.addEventListener('click', event => {
      menuRight.classList.remove('opened');
